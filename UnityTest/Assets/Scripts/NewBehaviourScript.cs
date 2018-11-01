@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    // Use this for initialization
+    public float thrust;
+    public Rigidbody rb;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
+    void FixedUpdate()
+    {
+        rb.AddForce(transform.forward * thrust);
+    }
 }
+
